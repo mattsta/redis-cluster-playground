@@ -11,6 +11,10 @@ Running a Redis Cluster requires, at a minimum:
 
 Redis Cluster Playground does both of those for you in two simple commands.
 
+### Shorter Intro
+
+There's a short meta-readme at my [Cluster Intro Nov 2013](https://matt.sh/short-redis-cluster-intro-nov-2013) page.
+
 ### Prerequisites
 
 - Have <code>tmux</code> installed.
