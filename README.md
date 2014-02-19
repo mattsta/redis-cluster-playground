@@ -126,7 +126,7 @@ To run a cluster, you need multiple <code>redis-server</code> processes running 
 
 Each <code>redis-server</code> process must be started in cluster mode.  Stand alone or Sentinel managed primary/secondary nodes are not allowed to participate in a cluster.
 
-Enable cluster mode by setting <code>cluster-enabled yes</code> and assigning a <code>closter-config-file [node-specific-name].conf</code> in your <code>redis.conf</code>.  (Reminder: all redis configuration options are valid command line arguments as well.)  You can get a quick memory-only localhost cluster node up and running with:
+Enable cluster mode by setting <code>cluster-enabled yes</code> and assigning a <code>cluster-config-file [node-specific-name].conf</code> in your <code>redis.conf</code>.  (Reminder: all redis configuration options are valid command line arguments as well.)  You can get a quick memory-only localhost cluster node up and running with:
 <pre>
 redis-server --bind 127.0.0.1 --port 1110 --save '' --cluster-enabled yes --cluster-config-file node-110.conf
 </pre>
