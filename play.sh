@@ -14,6 +14,7 @@ base=`dirname $0`
 nodeConfigDir=$base/nodes
 tmuxScript=$base/tmuxPlayground.sh
 nodeMap=$base/nodemap
+loglevel=debug
 
 PATH=$PATH:~/repos/redis/src/
 
@@ -42,7 +43,7 @@ spawnNode() {
     cd $nodeConfigBase
 
     # Cluster nodes are still saving dump.rdb even with save disabled.
-    verboseRun redis-server --bind $IP --port $PORT --save \'\' --cluster-enabled yes --cluster-config-file $nodeConfigPath --loglevel debug
+    verboseRun redis-server --bind $IP --port $PORT --save \'\' --cluster-enabled yes --cluster-config-file $nodeConfigPath --loglevel $loglevel
 }
 
 generateLimitedPorts() {
