@@ -42,7 +42,7 @@ spawnNode() {
     cd $nodeConfigBase
 
     # Cluster nodes are still saving dump.rdb even with save disabled.
-    verboseRun redis-server --bind $IP --port $PORT --save \'\' --cluster-enabled yes --cluster-config-file $nodeConfigPath --loglevel verbose
+    verboseRun redis-server --bind $IP --port $PORT --save \'\' --cluster-enabled yes --cluster-config-file $nodeConfigPath --loglevel debug
 }
 
 generateLimitedPorts() {
@@ -118,6 +118,7 @@ createCluster() {
 
 createClusterFromNodeMap() {
     createArgs=""
+    REPLICAS=$1
     if [[ $REPLICAS != "masters" ]]; then
         replicaArgs="--replicas $REPLICAS"
     fi
